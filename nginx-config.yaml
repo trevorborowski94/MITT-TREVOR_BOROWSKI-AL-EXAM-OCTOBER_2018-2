@@ -1,0 +1,12 @@
+---
+- hosts: web
+  sudo: yes
+  tasks:
+  - name: install nginx
+    apt: name=nginx state=installed update_cache=yes
+    become: yes
+  - name: start Service
+    service: name=nginx state=started
+    become: yes
+
+
